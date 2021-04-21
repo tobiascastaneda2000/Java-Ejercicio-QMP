@@ -4,10 +4,10 @@ package com.company;
 
 /**Buenas,  hice el codigo en java para practicar**/
 
-public class Main {
 
 
-    class Usuario  {
+
+    public class Usuario  {
         Prenda[] atuendo ;
 
 
@@ -29,27 +29,27 @@ public class Main {
 
     class Prenda{
         TipoPrenda tipoPrenda;
-        String categoria;
-        String tela;
-        String color;
-        String colorSecundario;
+        Categoria categoria;
+        Tela tela;
+        Color color;
+        Color colorSecundario;
 
 
 
-        String getCategoria(){ /**Usando Intellij, no me aparece las funciones de color amarillo, sino trasparente ¿Que significa?*/
+        Categoria getCategoria(){ /**Usando Intellij, no me aparece las funciones de color amarillo, sino trasparente ¿Que significa?*/
             return this.categoria;
         }
 
-        void setColor(String color){
+        void setColor(Color color){
             this.color = color;
 
         }
 
-        void setColorSecundario(String colorSecundario){
+        void setColorSecundario(Color colorSecundario){
             this.colorSecundario = colorSecundario;
         }
 
-        void setTela(String tela){
+        void setTela(Tela tela){
             this.tela = tela;
         }
 
@@ -78,17 +78,35 @@ public class Main {
 
 
 
-    class TipoPrenda{
+        class TipoPrenda{
 
-        String categoria;
+        Categoria categoria;
 
-        boolean coincideCon(String unaCategoria){
+        boolean coincideCon(Categoria unaCategoria){
             return categoria == unaCategoria;
         }
 
     }
 
 
+enum Categoria{
+        PARTESUPERIOR,
+        PARTEINFERIOR,
+        CALZADO,
+        ACCESORIOS
 }
+ enum Color{
+        AZUL,
+        AMARILLO,
+        ROJO,
+        VERDE,
+        NARANJA,
+        VIOLETA
+ }
+/**Se puede ir añadiendo mas colores*/
 
-/***/
+enum Tela{
+         LINO,
+         LANA
+}
+/**Se puede ir añadiendo mas telas*/
