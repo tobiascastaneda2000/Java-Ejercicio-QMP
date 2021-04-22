@@ -4,10 +4,39 @@ package com.company;
 
 /**Buenas,  hice el codigo en java para practicar**/
 
+/**
+ * Quize cambiar mi codigo a uno menos fragil, pero no supe como continuar
+class Atuendo{
+
+    Prenda parteSuperior;
+    Prenda parteInferior;
+    Prenda calzado;
+    Prenda accesorios;
+
+    void cargarPrenda(Prenda prenda, Categoria categoria) {
+
+        if (!prenda.tieneTodosLosDatos()) {
+            throw new Error("faltan datos");
+
+        }
+        if (!prenda.combinacionValida(categoria)) {
+            throw new Error("la categoria de la prenda no coincide con su tipo");
+        } else {
+            this.aniadirEnCategoria(prenda, categoria)
+        }
+    }
 
 
+        void aniadirEnCategoria(Prenda prenda,Categoria PARTESUPERIOR){  this.parteSuperior = prenda;
+        }
 
-    public class Usuario  {
+         void aniadirEnCategoria(Prenda prenda,Categoria PARTEINFERIOR) {
+
+         }
+
+}
+ */
+     class Usuario  {
         Prenda[] atuendo ;
 
 
@@ -36,7 +65,7 @@ package com.company;
 
 
 
-        Categoria getCategoria(){ /**Usando Intellij, no me aparece las funciones de color amarillo, sino trasparente ¿Que significa?*/
+        Categoria getCategoria(){
             return this.categoria;
         }
 
@@ -66,7 +95,7 @@ package com.company;
             if(!tipoPrenda.coincideCon(categoria)){
                 throw new Error("la categoria de la prenda no coincide con su tipo");
 
-            }/**Es la unica forma que se me ocurrio para hacer andar los errores*/
+            }
 
             else {
                 usuario.aniadir(this);
